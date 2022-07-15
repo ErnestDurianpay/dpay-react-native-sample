@@ -19,8 +19,8 @@ const checkoutOptions = {
   customerEmail: 'joe@ios.com',
   customerGivenName: 'JoeIOS',
   accessToken:
-    'fd810eb81c1b057a1cdb90b261ebebb69446fa80dd49101c9a2fd9e25448337a',
-  orderId: 'ord_hDQVZecyxr4905',
+    'fedf33b7a6f56e5a332a1aa497f131105b3842b602b23984de90cd0223b9b5e4',
+  orderId: 'ord_xrc0BvcVIF1680',
   amount: '23423',
   currency: 'IDR',
   paymentType: 'installment', //mandatory for installment type payments
@@ -43,18 +43,21 @@ const App = () => {
     var json = JSON.parse(data);
     //this is the successful payment id
     console.log(json?.response?.payment_id);
+    console.log('SUCCESS');
   };
 
   const failed = data => {
     var json = JSON.parse(data);
     //this is failed payment id
     console.log(json?.response?.payment_id);
+    console.log('FAILED');
   };
 
   const close = data => {
     var json = JSON.parse(data);
     //this is order id when closed
     console.log(json?.response?.order_id);
+    console.log('CLOSED');
   };
 
   return (
